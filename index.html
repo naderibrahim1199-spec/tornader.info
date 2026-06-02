@@ -463,15 +463,8 @@ section {
   margin-top: 0.3rem;
 }
 
-.audio-card audio {
-  width: 100%;
-  height: 36px;
-  filter: contrast(0.9);
-}
-
-/* Style the audio player for dark theme */
-.audio-card audio::-webkit-media-controls-panel {
-  background: var(--bg-secondary);
+.audio-card iframe {
+  border-radius: 4px;
 }
 
 /* ─── CREDENTIALS ─── */
@@ -558,10 +551,11 @@ section {
 }
 
 .featured-details h4 {
-  font-family: var(--font-body);
+  font-family: var(--font-display);
   font-weight: 500;
-  font-size: 0.95rem;
-  margin-bottom: 1rem;
+  font-size: 1.5rem;
+  letter-spacing: 2px;
+  margin-bottom: 1.2rem;
   color: var(--text-primary);
 }
 
@@ -569,7 +563,7 @@ section {
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
-  max-height: 300px;
+  max-height: 350px;
   overflow-y: auto;
 }
 
@@ -577,7 +571,7 @@ section {
   display: flex;
   justify-content: space-between;
   align-items: baseline;
-  padding: 0.5rem 0;
+  padding: 0.6rem 0;
   border-bottom: 1px solid rgba(42, 42, 47, 0.4);
   gap: 1rem;
 }
@@ -585,15 +579,15 @@ section {
 .sd-name {
   font-family: var(--font-body);
   font-weight: 500;
-  font-size: 0.85rem;
+  font-size: 1rem;
   color: var(--text-primary);
   white-space: nowrap;
 }
 
 .sd-desc {
   font-family: var(--font-mono);
-  font-size: 0.6rem;
-  color: var(--text-muted);
+  font-size: 0.7rem;
+  color: var(--text-secondary);
   letter-spacing: 0.5px;
   text-align: right;
 }
@@ -995,7 +989,7 @@ footer {
       <p class="section-label">01 — About</p>
       <h2 class="section-title">THE ENGINEER</h2>
       <div class="section-divider"></div>
-      <p>Hey, I'm Nader Boctor — but you might know me as Tornader. I'm a passionate and detail-oriented audio engineer based in Kalamazoo, MI, with three years of hands-on experience in audio editing, mixing, mastering, and sound design.</p>
+      <p>Hey, I'm Nader Boctor — but you might know me as Tornader. I'm a passionate and detail-oriented audio engineer based in Kalamazoo, MI, with four years of hands-on experience in audio editing, mixing, mastering, and sound design.</p>
       <p>I hold a Diploma in Audio Engineering from Hofa College in Germany, along with certifications from Berklee in Vocal Production, Creating Sounds for Electronic Music, and The Technology of Music Production. I work primarily in Pro Tools and Ableton Live.</p>
       <p>Whether it's a full mix, a polished master, or creative sound design, I'm dedicated to delivering high-quality soundscapes and music production tailored to each client's vision. Fluent in English and Arabic.</p>
       <div class="about-stats">
@@ -1004,7 +998,7 @@ footer {
           <div class="stat-label">Certifications</div>
         </div>
         <div>
-          <div class="stat-number">3+</div>
+          <div class="stat-number">4</div>
           <div class="stat-label">Years Exp</div>
         </div>
         <div>
@@ -1096,10 +1090,7 @@ footer {
         <p>Adam Buckley · Pop-Punk · Mix</p>
         <span class="audio-source">Multitrack: Cambridge MT</span>
       </div>
-      <audio controls preload="metadata">
-        <source src="Drag_Me_Down_Mix.flac" type="audio/flac">
-        Your browser does not support audio.
-      </audio>
+      <iframe width="100%" height="166" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/nader-rizk-5/drag-me-down-mmix&color=%23e85d26&auto_play=false&hide_related=true&show_comments=false&show_user=false&show_reposts=false&show_teaser=false"></iframe>
     </div>
 
     <div class="audio-card reveal">
@@ -1108,10 +1099,7 @@ footer {
         <p>Ruby Red · EDM-Pop · Mix</p>
         <span class="audio-source">Multitrack: Puremix</span>
       </div>
-      <audio controls preload="metadata">
-        <source src="Still_Alive_Mix.flac" type="audio/flac">
-        Your browser does not support audio.
-      </audio>
+      <iframe width="100%" height="166" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/nader-rizk-5/still-alive-mix&color=%23e85d26&auto_play=false&hide_related=true&show_comments=false&show_user=false&show_reposts=false&show_teaser=false"></iframe>
     </div>
 
     <div class="audio-card reveal">
@@ -1120,10 +1108,7 @@ footer {
         <p>Angelo Boitini · Pop · Mix</p>
         <span class="audio-source">Multitrack: Cambridge MT</span>
       </div>
-      <audio controls preload="metadata">
-        <source src="This_Town_Mix.flac" type="audio/flac">
-        Your browser does not support audio.
-      </audio>
+      <iframe width="100%" height="166" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/nader-rizk-5/this-town-mix&color=%23e85d26&auto_play=false&hide_related=true&show_comments=false&show_user=false&show_reposts=false&show_teaser=false"></iframe>
     </div>
 
     <div class="audio-card reveal">
@@ -1132,10 +1117,7 @@ footer {
         <p>Brain C Cai Fei Hong · EDM-Pop · Mix</p>
         <span class="audio-source">Multitrack: Cambridge MT</span>
       </div>
-      <audio controls preload="metadata">
-        <source src="Never_Let_You_Go_Mix.flac" type="audio/flac">
-        Your browser does not support audio.
-      </audio>
+      <iframe width="100%" height="166" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/nader-rizk-5/never-let-you-go-mix&color=%23e85d26&auto_play=false&hide_related=true&show_comments=false&show_user=false&show_reposts=false&show_teaser=false"></iframe>
     </div>
   </div>
 
@@ -1146,10 +1128,7 @@ footer {
         <h3>Drag Me Down</h3>
         <p>Adam Buckley · Pop-Punk · Master</p>
       </div>
-      <audio controls preload="metadata">
-        <source src="Drag_Me_Down_Master.flac" type="audio/flac">
-        Your browser does not support audio.
-      </audio>
+      <iframe width="100%" height="166" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/nader-rizk-5/drag-me-down-master&color=%23e85d26&auto_play=false&hide_related=true&show_comments=false&show_user=false&show_reposts=false&show_teaser=false"></iframe>
     </div>
 
     <div class="audio-card reveal">
@@ -1157,21 +1136,7 @@ footer {
         <h3>Still Alive</h3>
         <p>Ruby Red · EDM-Pop · Master</p>
       </div>
-      <audio controls preload="metadata">
-        <source src="Still_Alive_Master.flac" type="audio/flac">
-        Your browser does not support audio.
-      </audio>
-    </div>
-
-    <div class="audio-card reveal">
-      <div class="audio-info">
-        <h3>This Town</h3>
-        <p>Angelo Boitini · Pop · Master</p>
-      </div>
-      <audio controls preload="metadata">
-        <source src="This_Town_Master.flac" type="audio/flac">
-        Your browser does not support audio.
-      </audio>
+      <iframe width="100%" height="166" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/nader-rizk-5/still-alive-master&color=%23e85d26&auto_play=false&hide_related=true&show_comments=false&show_user=false&show_reposts=false&show_teaser=false"></iframe>
     </div>
 
     <div class="audio-card reveal">
@@ -1179,10 +1144,7 @@ footer {
         <h3>Never Let You Go</h3>
         <p>Brain C Cai Fei Hong · EDM-Pop · Master</p>
       </div>
-      <audio controls preload="metadata">
-        <source src="Never_Let_You_Go_Master.flac" type="audio/flac">
-        Your browser does not support audio.
-      </audio>
+      <iframe width="100%" height="166" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/nader-rizk-5/never-let-you-go-master&color=%23e85d26&auto_play=false&hide_related=true&show_comments=false&show_user=false&show_reposts=false&show_teaser=false"></iframe>
     </div>
   </div>
 </section>
@@ -1203,15 +1165,7 @@ footer {
     </div>
     <div class="featured-content">
       <div class="featured-video" id="game-video-slot">
-        <!-- NADER: Replace this div with your YouTube embed like:
-             <iframe width="100%" height="100%" src="https://www.youtube.com/embed/YOUR_VIDEO_ID" frameborder="0" allowfullscreen></iframe>
-        -->
-        <div class="video-placeholder">
-          <div class="video-play-icon">
-            <svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg>
-          </div>
-          <span class="video-label">Upload to YouTube &amp; embed here</span>
-        </div>
+        <iframe width="100%" height="100%" src="https://www.youtube.com/embed/SdADVQ8gaqI" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
       </div>
       <div class="featured-details">
         <h4>Sound Design Breakdown</h4>
@@ -1253,40 +1207,8 @@ footer {
   <h2 class="section-title reveal">THE STUDIO</h2>
   <div class="section-divider reveal"></div>
 
-  <div class="gallery-grid">
-    <div class="gallery-item reveal">
-      <img src="nader-studio.jpg" alt="Nader in the studio" style="width:100%;height:100%;object-fit:cover;">
-    </div>
-    <div class="gallery-item reveal">
-      <div class="gallery-placeholder">
-        <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg>
-        Photo 2
-      </div>
-    </div>
-    <div class="gallery-item reveal">
-      <div class="gallery-placeholder">
-        <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg>
-        Photo 3
-      </div>
-    </div>
-    <div class="gallery-item reveal">
-      <div class="gallery-placeholder">
-        <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg>
-        Photo 4
-      </div>
-    </div>
-    <div class="gallery-item reveal">
-      <div class="gallery-placeholder">
-        <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg>
-        Photo 5
-      </div>
-    </div>
-    <div class="gallery-item reveal">
-      <div class="gallery-placeholder">
-        <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg>
-        Photo 6
-      </div>
-    </div>
+  <div class="gallery-single reveal">
+    <img src="nader-studio.jpg" alt="Nader Boctor in the studio" style="width:100%;max-width:800px;display:block;margin:0 auto;border:1px solid var(--border);">
   </div>
 </section>
 
@@ -1356,17 +1278,9 @@ footer {
     <a href="https://www.instagram.com/naderibrahim._/" target="_blank" aria-label="Instagram">
       <svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" ry="5" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="5" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="17.5" cy="6.5" r="1.5"/></svg>
     </a>
-    <!-- YouTube -->
-    <a href="#" aria-label="YouTube">
-      <svg viewBox="0 0 24 24"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19.1c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"/><polygon points="9.75,15.02 15.5,11.75 9.75,8.48" fill="#0a0a0c"/></svg>
-    </a>
     <!-- SoundCloud -->
-    <a href="#" aria-label="SoundCloud">
+    <a href="https://soundcloud.com/nader-rizk-5" target="_blank" aria-label="SoundCloud">
       <svg viewBox="0 0 24 24"><path d="M1 18V14.5M4 18V11M7 18V8M10 18V5M13 18V7M16 18V9M19 18V11M22 18V13"/></svg>
-    </a>
-    <!-- Twitter/X -->
-    <a href="#" aria-label="Twitter">
-      <svg viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
     </a>
   </div>
 </footer>
