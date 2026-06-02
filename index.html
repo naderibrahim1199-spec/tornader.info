@@ -388,63 +388,60 @@ section {
 }
 
 /* ─── AUDIO PORTFOLIO ─── */
+.audio-tabs {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 2rem;
+}
+
+.audio-tab {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  padding: 0.7rem 1.8rem;
+  border: 1px solid var(--border);
+  background: transparent;
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.audio-tab:hover {
+  border-color: var(--accent);
+  color: var(--text-primary);
+}
+
+.audio-tab.active {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: var(--bg-primary);
+}
+
 .audio-grid {
   display: grid;
   gap: 1rem;
 }
 
 .audio-card {
-  display: grid;
-  grid-template-columns: 60px 1fr auto;
-  align-items: center;
-  gap: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
   padding: 1.5rem;
   background: var(--bg-card);
   border: 1px solid var(--border);
   transition: all 0.3s ease;
-  cursor: pointer;
 }
 
 .audio-card:hover {
   background: var(--bg-card-hover);
   border-color: var(--accent);
-  transform: translateX(5px);
-}
-
-.audio-play-btn {
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  border: 1px solid var(--border);
-  background: transparent;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  flex-shrink: 0;
-}
-
-.audio-play-btn svg {
-  width: 18px;
-  height: 18px;
-  fill: var(--text-primary);
-  margin-left: 2px;
-}
-
-.audio-card:hover .audio-play-btn {
-  border-color: var(--accent);
-  background: var(--accent);
-}
-
-.audio-card:hover .audio-play-btn svg {
-  fill: var(--bg-primary);
 }
 
 .audio-info h3 {
   font-family: var(--font-body);
   font-weight: 500;
-  font-size: 1rem;
+  font-size: 1.05rem;
   margin-bottom: 0.3rem;
 }
 
@@ -456,38 +453,151 @@ section {
   text-transform: uppercase;
 }
 
-.audio-waveform {
-  display: flex;
-  align-items: center;
-  gap: 2px;
-  height: 30px;
-}
-
-.audio-waveform span {
-  display: block;
-  width: 3px;
-  background: var(--text-muted);
-  border-radius: 2px;
-  transition: background 0.3s ease;
-}
-
-.audio-card:hover .audio-waveform span {
-  background: var(--accent);
-  animation: waveAnim 0.6s ease-in-out infinite alternate;
-}
-
-@keyframes waveAnim {
-  from { transform: scaleY(1); }
-  to { transform: scaleY(1.8); }
-}
-
-.audio-duration {
+.audio-source {
   font-family: var(--font-mono);
-  font-size: 0.7rem;
+  font-size: 0.55rem;
   color: var(--text-muted);
+  letter-spacing: 1px;
+  opacity: 0.6;
+  display: block;
+  margin-top: 0.3rem;
+}
+
+.audio-card audio {
+  width: 100%;
+  height: 36px;
+  filter: contrast(0.9);
+}
+
+/* Style the audio player for dark theme */
+.audio-card audio::-webkit-media-controls-panel {
+  background: var(--bg-secondary);
+}
+
+/* ─── CREDENTIALS ─── */
+.cred-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1rem;
+}
+
+.cred-card {
+  padding: 1.5rem;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  transition: all 0.3s ease;
+}
+
+.cred-card:hover {
+  border-color: var(--accent);
+  background: var(--bg-card-hover);
+}
+
+.cred-card h3 {
+  font-family: var(--font-body);
+  font-weight: 500;
+  font-size: 0.95rem;
+  margin-bottom: 0.4rem;
+}
+
+.cred-card p {
+  font-family: var(--font-mono);
+  font-size: 0.6rem;
+  color: var(--text-muted);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.cred-card .cred-icon {
+  font-size: 1.5rem;
+  margin-bottom: 0.8rem;
+  display: block;
 }
 
 /* ─── VIDEO SHOWCASE ─── */
+.featured-project {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  padding: 2rem;
+  margin-bottom: 1.5rem;
+}
+
+.featured-header h3 {
+  font-family: var(--font-display);
+  font-size: 1.8rem;
+  letter-spacing: 2px;
+}
+
+.featured-sub {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  letter-spacing: 1px;
+  color: var(--accent);
+  text-transform: uppercase;
+  margin-top: 0.3rem;
+}
+
+.featured-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  margin-top: 1.5rem;
+}
+
+.featured-video {
+  aspect-ratio: 16/9;
+  background: var(--bg-secondary);
+  border: 1px solid var(--border);
+  overflow: hidden;
+}
+
+.featured-video iframe,
+.featured-video video {
+  width: 100%;
+  height: 100%;
+}
+
+.featured-details h4 {
+  font-family: var(--font-body);
+  font-weight: 500;
+  font-size: 0.95rem;
+  margin-bottom: 1rem;
+  color: var(--text-primary);
+}
+
+.sd-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  max-height: 300px;
+  overflow-y: auto;
+}
+
+.sd-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid rgba(42, 42, 47, 0.4);
+  gap: 1rem;
+}
+
+.sd-name {
+  font-family: var(--font-body);
+  font-weight: 500;
+  font-size: 0.85rem;
+  color: var(--text-primary);
+  white-space: nowrap;
+}
+
+.sd-desc {
+  font-family: var(--font-mono);
+  font-size: 0.6rem;
+  color: var(--text-muted);
+  letter-spacing: 0.5px;
+  text-align: right;
+}
+
 .video-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -806,6 +916,12 @@ footer {
 
   .video-grid { grid-template-columns: 1fr; }
 
+  .featured-content { grid-template-columns: 1fr; }
+
+  .featured-project { padding: 1.2rem; }
+
+  .sd-list { max-height: none; }
+
   .gallery-grid {
     grid-template-columns: repeat(2, 1fr);
     grid-auto-rows: 180px;
@@ -816,8 +932,7 @@ footer {
 
   .contact-wrapper { grid-template-columns: 1fr; gap: 2.5rem; }
 
-  .audio-card { grid-template-columns: 50px 1fr; }
-  .audio-waveform { display: none; }
+  .audio-card { padding: 1.2rem; }
 
   footer { flex-direction: column; gap: 1.5rem; text-align: center; }
 }
@@ -842,6 +957,7 @@ footer {
   <a href="#" class="nav-logo">TORN<span>A</span>DER</a>
   <ul class="nav-links" id="navLinks">
     <li><a href="#about" onclick="closeMenu()">About</a></li>
+    <li><a href="#credentials" onclick="closeMenu()">Credentials</a></li>
     <li><a href="#audio" onclick="closeMenu()">Audio</a></li>
     <li><a href="#video" onclick="closeMenu()">Video</a></li>
     <li><a href="#gallery" onclick="closeMenu()">Gallery</a></li>
@@ -900,107 +1016,224 @@ footer {
   </div>
 </section>
 
+<!-- ─── CREDENTIALS ─── -->
+<section id="credentials">
+  <p class="section-label reveal">02 — Credentials</p>
+  <h2 class="section-title reveal">TRAINED & CERTIFIED</h2>
+  <div class="section-divider reveal"></div>
+
+  <div class="cred-grid">
+    <div class="cred-card reveal">
+      <span class="cred-icon">🎓</span>
+      <h3>Diploma in Audio Engineering</h3>
+      <p>Hofa College · Germany · 2025</p>
+    </div>
+    <div class="cred-card reveal">
+      <span class="cred-icon">🎛️</span>
+      <h3>Audio Engineering</h3>
+      <p>Hofa College</p>
+    </div>
+    <div class="cred-card reveal">
+      <span class="cred-icon">✂️</span>
+      <h3>Audio Editing</h3>
+      <p>Hofa College</p>
+    </div>
+    <div class="cred-card reveal">
+      <span class="cred-icon">🥁</span>
+      <h3>Drum Programming</h3>
+      <p>Hofa College</p>
+    </div>
+    <div class="cred-card reveal">
+      <span class="cred-icon">🎧</span>
+      <h3>Audio Assistant</h3>
+      <p>Hofa College</p>
+    </div>
+    <div class="cred-card reveal">
+      <span class="cred-icon">🎹</span>
+      <h3>Music Production</h3>
+      <p>Point Blank</p>
+    </div>
+    <div class="cred-card reveal">
+      <span class="cred-icon">🔊</span>
+      <h3>Sound Design</h3>
+      <p>Hofa College</p>
+    </div>
+    <div class="cred-card reveal">
+      <span class="cred-icon">🎤</span>
+      <h3>The Art of Vocal Production</h3>
+      <p>Berklee</p>
+    </div>
+    <div class="cred-card reveal">
+      <span class="cred-icon">🎶</span>
+      <h3>Creating Sounds for Electronic Music</h3>
+      <p>Berklee</p>
+    </div>
+    <div class="cred-card reveal">
+      <span class="cred-icon">⚙️</span>
+      <h3>The Technology of Music Production</h3>
+      <p>Berklee</p>
+    </div>
+  </div>
+</section>
+
 <!-- ─── AUDIO PORTFOLIO ─── -->
 <section id="audio">
-  <p class="section-label reveal">02 — Portfolio</p>
+  <p class="section-label reveal">03 — Portfolio</p>
   <h2 class="section-title reveal">LISTEN</h2>
   <div class="section-divider reveal"></div>
 
-  <div class="audio-grid">
+  <!-- Tab Switcher -->
+  <div class="audio-tabs reveal">
+    <button class="audio-tab active" onclick="switchTab('mixes')">Mixes</button>
+    <button class="audio-tab" onclick="switchTab('masters')">Masters</button>
+  </div>
+
+  <!-- MIXES -->
+  <div class="audio-grid" id="tab-mixes">
     <div class="audio-card reveal">
-      <div class="audio-play-btn">
-        <svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg>
-      </div>
       <div class="audio-info">
-        <h3>Track Title — Artist Name</h3>
-        <p>Mixing &amp; Mastering</p>
+        <h3>Drag Me Down</h3>
+        <p>Adam Buckley · Pop-Punk · Mix</p>
+        <span class="audio-source">Multitrack: Cambridge MT</span>
       </div>
-      <div class="audio-waveform">
-        <span style="height:12px"></span><span style="height:20px"></span><span style="height:8px"></span>
-        <span style="height:25px"></span><span style="height:15px"></span><span style="height:28px"></span>
-        <span style="height:10px"></span><span style="height:22px"></span><span style="height:18px"></span>
-        <span style="height:30px"></span><span style="height:14px"></span><span style="height:8px"></span>
-        <span style="height:20px"></span><span style="height:25px"></span><span style="height:12px"></span>
-      </div>
+      <audio controls preload="metadata">
+        <source src="Drag_Me_Down_Mix.flac" type="audio/flac">
+        Your browser does not support audio.
+      </audio>
     </div>
 
     <div class="audio-card reveal">
-      <div class="audio-play-btn">
-        <svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg>
-      </div>
       <div class="audio-info">
-        <h3>Track Title — Artist Name</h3>
-        <p>Recording &amp; Mixing</p>
+        <h3>Still Alive</h3>
+        <p>Ruby Red · EDM-Pop · Mix</p>
+        <span class="audio-source">Multitrack: Puremix</span>
       </div>
-      <div class="audio-waveform">
-        <span style="height:18px"></span><span style="height:10px"></span><span style="height:28px"></span>
-        <span style="height:14px"></span><span style="height:22px"></span><span style="height:8px"></span>
-        <span style="height:30px"></span><span style="height:16px"></span><span style="height:12px"></span>
-        <span style="height:20px"></span><span style="height:25px"></span><span style="height:10px"></span>
-        <span style="height:18px"></span><span style="height:14px"></span><span style="height:28px"></span>
-      </div>
+      <audio controls preload="metadata">
+        <source src="Still_Alive_Mix.flac" type="audio/flac">
+        Your browser does not support audio.
+      </audio>
     </div>
 
     <div class="audio-card reveal">
-      <div class="audio-play-btn">
-        <svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg>
-      </div>
       <div class="audio-info">
-        <h3>Track Title — Artist Name</h3>
-        <p>Sound Design</p>
+        <h3>This Town</h3>
+        <p>Angelo Boitini · Pop · Mix</p>
+        <span class="audio-source">Multitrack: Cambridge MT</span>
       </div>
-      <div class="audio-waveform">
-        <span style="height:22px"></span><span style="height:30px"></span><span style="height:14px"></span>
-        <span style="height:8px"></span><span style="height:18px"></span><span style="height:25px"></span>
-        <span style="height:12px"></span><span style="height:20px"></span><span style="height:10px"></span>
-        <span style="height:28px"></span><span style="height:16px"></span><span style="height:22px"></span>
-        <span style="height:10px"></span><span style="height:18px"></span><span style="height:14px"></span>
-      </div>
+      <audio controls preload="metadata">
+        <source src="This_Town_Mix.flac" type="audio/flac">
+        Your browser does not support audio.
+      </audio>
     </div>
 
     <div class="audio-card reveal">
-      <div class="audio-play-btn">
-        <svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg>
-      </div>
       <div class="audio-info">
-        <h3>Track Title — Artist Name</h3>
-        <p>Production &amp; Mixing</p>
+        <h3>Never Let You Go</h3>
+        <p>Brain C Cai Fei Hong · EDM-Pop · Mix</p>
+        <span class="audio-source">Multitrack: Cambridge MT</span>
       </div>
-      <div class="audio-waveform">
-        <span style="height:10px"></span><span style="height:15px"></span><span style="height:25px"></span>
-        <span style="height:20px"></span><span style="height:30px"></span><span style="height:12px"></span>
-        <span style="height:18px"></span><span style="height:8px"></span><span style="height:22px"></span>
-        <span style="height:28px"></span><span style="height:14px"></span><span style="height:18px"></span>
-        <span style="height:10px"></span><span style="height:24px"></span><span style="height:16px"></span>
+      <audio controls preload="metadata">
+        <source src="Never_Let_You_Go_Mix.flac" type="audio/flac">
+        Your browser does not support audio.
+      </audio>
+    </div>
+  </div>
+
+  <!-- MASTERS -->
+  <div class="audio-grid" id="tab-masters" style="display:none;">
+    <div class="audio-card reveal">
+      <div class="audio-info">
+        <h3>Drag Me Down</h3>
+        <p>Adam Buckley · Pop-Punk · Master</p>
       </div>
+      <audio controls preload="metadata">
+        <source src="Drag_Me_Down_Master.flac" type="audio/flac">
+        Your browser does not support audio.
+      </audio>
     </div>
 
     <div class="audio-card reveal">
-      <div class="audio-play-btn">
-        <svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg>
-      </div>
       <div class="audio-info">
-        <h3>Track Title — Artist Name</h3>
-        <p>Mastering</p>
+        <h3>Still Alive</h3>
+        <p>Ruby Red · EDM-Pop · Master</p>
       </div>
-      <div class="audio-waveform">
-        <span style="height:28px"></span><span style="height:12px"></span><span style="height:18px"></span>
-        <span style="height:22px"></span><span style="height:10px"></span><span style="height:30px"></span>
-        <span style="height:14px"></span><span style="height:25px"></span><span style="height:8px"></span>
-        <span style="height:20px"></span><span style="height:16px"></span><span style="height:12px"></span>
-        <span style="height:28px"></span><span style="height:10px"></span><span style="height:20px"></span>
+      <audio controls preload="metadata">
+        <source src="Still_Alive_Master.flac" type="audio/flac">
+        Your browser does not support audio.
+      </audio>
+    </div>
+
+    <div class="audio-card reveal">
+      <div class="audio-info">
+        <h3>This Town</h3>
+        <p>Angelo Boitini · Pop · Master</p>
       </div>
+      <audio controls preload="metadata">
+        <source src="This_Town_Master.flac" type="audio/flac">
+        Your browser does not support audio.
+      </audio>
+    </div>
+
+    <div class="audio-card reveal">
+      <div class="audio-info">
+        <h3>Never Let You Go</h3>
+        <p>Brain C Cai Fei Hong · EDM-Pop · Master</p>
+      </div>
+      <audio controls preload="metadata">
+        <source src="Never_Let_You_Go_Master.flac" type="audio/flac">
+        Your browser does not support audio.
+      </audio>
     </div>
   </div>
 </section>
 
 <!-- ─── VIDEO SHOWCASE ─── -->
 <section id="video">
-  <p class="section-label reveal">03 — Video</p>
+  <p class="section-label reveal">04 — Video</p>
   <h2 class="section-title reveal">WATCH</h2>
   <div class="section-divider reveal"></div>
 
-  <div class="video-grid">
+  <!-- Featured: Game Sound Design -->
+  <div class="featured-project reveal">
+    <div class="featured-header">
+      <div>
+        <h3>Empire and Tribes</h3>
+        <p class="featured-sub">White Vertex Studios · Sound Design &amp; Foley · Hofa College Assignment</p>
+      </div>
+    </div>
+    <div class="featured-content">
+      <div class="featured-video" id="game-video-slot">
+        <!-- NADER: Replace this div with your YouTube embed like:
+             <iframe width="100%" height="100%" src="https://www.youtube.com/embed/YOUR_VIDEO_ID" frameborder="0" allowfullscreen></iframe>
+        -->
+        <div class="video-placeholder">
+          <div class="video-play-icon">
+            <svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg>
+          </div>
+          <span class="video-label">Upload to YouTube &amp; embed here</span>
+        </div>
+      </div>
+      <div class="featured-details">
+        <h4>Sound Design Breakdown</h4>
+        <div class="sd-list">
+          <div class="sd-item"><span class="sd-name">Intro Pad</span><span class="sd-desc">Intro excitement</span></div>
+          <div class="sd-item"><span class="sd-name">Logo Sweep</span><span class="sd-desc">Grab the player's attention</span></div>
+          <div class="sd-item"><span class="sd-name">Mouse Click</span><span class="sd-desc">Give the game its character</span></div>
+          <div class="sd-item"><span class="sd-name">Stone Hit</span><span class="sd-desc">Recorded with a real stone &amp; wooden hammer</span></div>
+          <div class="sd-item"><span class="sd-name">Punch</span><span class="sd-desc">Hammer movement without a hit</span></div>
+          <div class="sd-item"><span class="sd-name">Tree Hit 1 &amp; 2</span><span class="sd-desc">Studio-recorded with crunch layers</span></div>
+          <div class="sd-item"><span class="sd-name">Footsteps — Forest</span><span class="sd-desc">Walking on grass</span></div>
+          <div class="sd-item"><span class="sd-name">Pop-Up</span><span class="sd-desc">Menu open sound</span></div>
+          <div class="sd-item"><span class="sd-name">Water Sounds</span><span class="sd-desc">Lake walking, splash, &amp; river ambiance</span></div>
+          <div class="sd-item"><span class="sd-name">Building &amp; Roads</span><span class="sd-desc">Construction SFX with grass-cutting layers</span></div>
+          <div class="sd-item"><span class="sd-name">Bridge Movement</span><span class="sd-desc">Running &amp; walking on bridge</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Band Cover Album -->
+  <div class="video-grid" style="margin-top: 2rem;">
     <div class="video-card reveal" style="grid-column: span 2;">
       <video controls style="width:100%;height:100%;object-fit:cover;background:#000;">
         <source src="band-cover-album.mp4" type="video/mp4">
@@ -1011,38 +1244,12 @@ footer {
         <p>4 Songs · Recorded by Tornader</p>
       </div>
     </div>
-
-    <div class="video-card reveal">
-      <div class="video-placeholder">
-        <div class="video-play-icon">
-          <svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg>
-        </div>
-        <span class="video-label">Embed your video here</span>
-      </div>
-      <div class="video-info">
-        <h3>Studio Session — Behind the Mix</h3>
-        <p>Coming soon</p>
-      </div>
-    </div>
-
-    <div class="video-card reveal">
-      <div class="video-placeholder">
-        <div class="video-play-icon">
-          <svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg>
-        </div>
-        <span class="video-label">Embed your video here</span>
-      </div>
-      <div class="video-info">
-        <h3>Before &amp; After — Mix Breakdown</h3>
-        <p>Coming soon</p>
-      </div>
-    </div>
   </div>
 </section>
 
 <!-- ─── GALLERY ─── -->
 <section id="gallery">
-  <p class="section-label reveal">04 — Gallery</p>
+  <p class="section-label reveal">05 — Gallery</p>
   <h2 class="section-title reveal">THE STUDIO</h2>
   <div class="section-divider reveal"></div>
 
@@ -1085,7 +1292,7 @@ footer {
 
 <!-- ─── CONTACT ─── -->
 <section id="contact">
-  <p class="section-label reveal">05 — Contact</p>
+  <p class="section-label reveal">06 — Contact</p>
   <h2 class="section-title reveal">LET'S WORK</h2>
   <div class="section-divider reveal"></div>
 
@@ -1146,7 +1353,7 @@ footer {
   <p class="footer-text">© 2026 TORNADER — Nader. All rights reserved.</p>
   <div class="footer-socials">
     <!-- Instagram -->
-    <a href="#" aria-label="Instagram">
+    <a href="https://www.instagram.com/naderibrahim._/" target="_blank" aria-label="Instagram">
       <svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" ry="5" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="5" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="17.5" cy="6.5" r="1.5"/></svg>
     </a>
     <!-- YouTube -->
@@ -1176,6 +1383,16 @@ function closeMenu() {
   document.getElementById('hamburger').classList.remove('active');
 }
 
+// Tab switching for Mixes/Masters
+function switchTab(tab) {
+  document.getElementById('tab-mixes').style.display = tab === 'mixes' ? 'grid' : 'none';
+  document.getElementById('tab-masters').style.display = tab === 'masters' ? 'grid' : 'none';
+  document.querySelectorAll('.audio-tab').forEach(btn => btn.classList.remove('active'));
+  event.target.classList.add('active');
+  // Re-trigger reveal for newly visible cards
+  document.querySelectorAll('#tab-' + tab + ' .reveal:not(.visible)').forEach(el => observer.observe(el));
+}
+
 // Scroll reveal
 const observer = new IntersectionObserver((entries) => {
   entries.forEach((entry, index) => {
@@ -1190,12 +1407,6 @@ const observer = new IntersectionObserver((entries) => {
 
 document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 
-// Waveform random heights on load
-document.querySelectorAll('.audio-waveform').forEach(waveform => {
-  waveform.querySelectorAll('span').forEach(bar => {
-    bar.style.animationDelay = Math.random() * 0.5 + 's';
-  });
-});
 </script>
 
 </body>
