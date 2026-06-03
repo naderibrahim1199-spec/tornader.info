@@ -316,16 +316,14 @@ section {
 
 .about-image {
   position: relative;
-  aspect-ratio: 4/3;
   overflow: hidden;
   border: 1px solid var(--border);
 }
 
 .about-image img {
   width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center top;
+  height: auto;
+  display: block;
   filter: saturate(0.75) brightness(0.85) contrast(1.1);
   transition: filter 0.5s ease;
 }
@@ -928,10 +926,6 @@ footer {
   section { padding: 4rem 1.5rem; }
 
   .about-grid { grid-template-columns: 1fr; gap: 2rem; }
-
-  .about-image { aspect-ratio: auto; }
-
-  .about-image img { object-position: center center; }
 
   .about-stats { grid-template-columns: repeat(3, 1fr); gap: 1rem; }
 
