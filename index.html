@@ -764,6 +764,70 @@ section {
 
 .gallery-item:hover::after { opacity: 1; }
 
+/* ─── CLIENT REVIEWS ─── */
+.reviews-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 1.5rem;
+}
+
+.review-card {
+  padding: 2rem;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.review-card:hover {
+  border-color: var(--accent);
+  background: var(--bg-card-hover);
+}
+
+.review-stars {
+  color: var(--accent);
+  font-size: 1.2rem;
+  letter-spacing: 2px;
+  margin-bottom: 1rem;
+}
+
+.review-text {
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+  line-height: 1.7;
+  font-style: italic;
+  margin-bottom: 1.5rem;
+}
+
+.review-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.review-author {
+  font-family: var(--font-body);
+  font-weight: 500;
+  font-size: 0.9rem;
+  color: var(--text-primary);
+}
+
+.review-project {
+  font-family: var(--font-mono);
+  font-size: 0.6rem;
+  letter-spacing: 1px;
+  color: var(--accent);
+  text-transform: uppercase;
+}
+
+.review-source {
+  font-family: var(--font-mono);
+  font-size: 0.55rem;
+  letter-spacing: 1px;
+  color: var(--text-muted);
+  text-transform: uppercase;
+}
+
 /* ─── CONTACT ─── */
 .contact-wrapper {
   display: grid;
@@ -975,6 +1039,7 @@ footer {
     <li><a href="#audio" onclick="closeMenu()">Audio</a></li>
     <li><a href="#video" onclick="closeMenu()">Video</a></li>
     <li><a href="#gallery" onclick="closeMenu()">Gallery</a></li>
+    <li><a href="#reviews" onclick="closeMenu()">Reviews</a></li>
     <li><a href="#contact" onclick="closeMenu()">Contact</a></li>
   </ul>
   <button class="hamburger" id="hamburger" onclick="toggleMenu()">
@@ -986,7 +1051,7 @@ footer {
 <section class="hero">
   <p class="hero-pre">Audio Engineer · Mixer · Sound Designer</p>
   <h1>
-    <span class="outline">TORN</span>ADER
+    <span class="outline">TORN</span>ADER <img src="tornado-emoji.png" alt="🌪️" style="height:0.8em;vertical-align:middle;margin-left:0.1em;">
   </h1>
   <p class="hero-sub">Passionate audio engineer specializing in mixing, mastering, and sound design. Trained at Hofa College &amp; Berklee — delivering soundscapes that hit different.</p>
   <div class="hero-cta">
@@ -1232,9 +1297,38 @@ footer {
   </div>
 </section>
 
+<!-- ─── CLIENT REVIEWS ─── -->
+<section id="reviews">
+  <p class="section-label reveal">06 — Reviews</p>
+  <h2 class="section-title reveal">WHAT CLIENTS SAY</h2>
+  <div class="section-divider reveal"></div>
+
+  <div class="reviews-grid">
+    <div class="review-card reveal">
+      <div class="review-stars">★★★★★</div>
+      <p class="review-text">"Thank u so much for the great and professional work, keep up the great work will not be the lest time 👍"</p>
+      <div class="review-meta">
+        <span class="review-author">Adam</span>
+        <span class="review-project">Mixing &amp; Mastering</span>
+        <span class="review-source">AirGigs · Verified Review</span>
+      </div>
+    </div>
+
+    <div class="review-card reveal">
+      <div class="review-stars">★★★★★</div>
+      <p class="review-text">"Great and professional dialogue rebuild work on my short film. Delivered on time with excellent quality."</p>
+      <div class="review-meta">
+        <span class="review-author">Client</span>
+        <span class="review-project">Dialogue Rebuild — Short Film</span>
+        <span class="review-source">Upwork · 5.0 Rating</span>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- ─── CONTACT ─── -->
 <section id="contact">
-  <p class="section-label reveal">06 — Contact</p>
+  <p class="section-label reveal">07 — Contact</p>
   <h2 class="section-title reveal">LET'S WORK</h2>
   <div class="section-divider reveal"></div>
 
