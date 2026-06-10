@@ -706,7 +706,7 @@ section {
 .gallery-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  grid-auto-rows: 250px;
+  grid-auto-rows: 280px;
   gap: 1rem;
 }
 
@@ -724,9 +724,6 @@ section {
   transform: scale(1.02);
   z-index: 2;
 }
-
-.gallery-item:nth-child(1) { grid-row: span 2; }
-.gallery-item:nth-child(4) { grid-column: span 2; }
 
 .gallery-placeholder {
   width: 100%;
@@ -1002,11 +999,8 @@ footer {
 
   .gallery-grid {
     grid-template-columns: repeat(2, 1fr);
-    grid-auto-rows: 180px;
+    grid-auto-rows: 200px;
   }
-
-  .gallery-item:nth-child(1) { grid-row: span 1; }
-  .gallery-item:nth-child(4) { grid-column: span 1; }
 
   .contact-wrapper { grid-template-columns: 1fr; gap: 2.5rem; }
 
@@ -1049,7 +1043,7 @@ footer {
 
 <!-- ─── HERO ─── -->
 <section class="hero">
-  <p class="hero-pre">Audio Engineer · Mixer · Sound Designer</p>
+  <p class="hero-pre">Audio Engineer · Mixer · Sound Designer · Founder of <a href="https://www.freqy.app/" target="_blank" style="color: var(--accent); text-decoration: none;">Freqy</a></p>
   <h1>
     <span class="outline">TORN</span>ADER <img src="tornado-emoji.png" alt="🌪️" style="height:0.8em;vertical-align:middle;margin-left:0.1em;">
   </h1>
@@ -1068,7 +1062,7 @@ footer {
 <section id="about">
   <div class="about-grid reveal">
     <div class="about-image">
-      <img src="nader-studio.jpg" alt="Nader Boctor in the studio">
+      <img src="studio-wide.jpg" alt="Tornader Studio - Nader Boctor's workspace">
     </div>
     <div class="about-text">
       <p class="section-label">01 — About</p>
@@ -1076,7 +1070,7 @@ footer {
       <div class="section-divider"></div>
       <p>Hey, I'm Nader Boctor — but you might know me as Tornader. I'm a passionate and detail-oriented audio engineer based in Kalamazoo, MI, with four years of hands-on experience in audio editing, mixing, mastering, and sound design.</p>
       <p>I hold a Diploma in Audio Engineering from Hofa College in Germany, along with certifications from Berklee in Vocal Production, Creating Sounds for Electronic Music, and The Technology of Music Production. I work primarily in Pro Tools and Ableton Live.</p>
-      <p>Whether it's a full mix, a polished master, or creative sound design, I'm dedicated to delivering high-quality soundscapes and music production tailored to each client's vision. Fluent in English and Arabic.</p>
+      <p>Whether it's a full mix, a polished master, or creative sound design, I'm dedicated to delivering high-quality soundscapes and music production tailored to each client's vision. I'm also the founder of <a href="https://www.freqy.app/" target="_blank" style="color: var(--accent); text-decoration: none;">Freqy</a>, an app built for audio professionals. Fluent in English and Arabic.</p>
       <div class="about-stats">
         <div>
           <div class="stat-number">8</div>
@@ -1292,8 +1286,25 @@ footer {
   <h2 class="section-title reveal">THE STUDIO</h2>
   <div class="section-divider reveal"></div>
 
-  <div class="gallery-single reveal">
-    <img src="nader-studio.jpg" alt="Nader Boctor in the studio" style="width:100%;max-width:800px;display:block;margin:0 auto;border:1px solid var(--border);">
+  <div class="gallery-grid">
+    <div class="gallery-item reveal">
+      <img src="studio-wide.jpg" alt="Studio workstation overview" style="width:100%;height:100%;object-fit:cover;">
+    </div>
+    <div class="gallery-item reveal">
+      <img src="studio-monitor.jpg" alt="Adam Audio studio monitor" style="width:100%;height:100%;object-fit:cover;">
+    </div>
+    <div class="gallery-item reveal">
+      <img src="studio-gear.jpg" alt="SPL Vitalizer and MOTU 828 gear rack" style="width:100%;height:100%;object-fit:cover;">
+    </div>
+    <div class="gallery-item reveal">
+      <img src="studio-piano.jpg" alt="Haines Bros Cabinet Grand piano" style="width:100%;height:100%;object-fit:cover;">
+    </div>
+    <div class="gallery-item reveal">
+      <img src="studio-books.jpg" alt="Audio engineering books and studio shelf" style="width:100%;height:100%;object-fit:cover;">
+    </div>
+    <div class="gallery-item reveal">
+      <img src="studio-mics.jpg" alt="Microphone collection - AKG, SM57, Aston Origin, Audix" style="width:100%;height:100%;object-fit:cover;">
+    </div>
   </div>
 </section>
 
@@ -1318,9 +1329,19 @@ footer {
       <div class="review-stars">★★★★★</div>
       <p class="review-text">"Great and professional dialogue rebuild work on my short film. Delivered on time with excellent quality."</p>
       <div class="review-meta">
-        <span class="review-author">Client</span>
+        <span class="review-author">Nafisa</span>
         <span class="review-project">Dialogue Rebuild — Short Film</span>
         <span class="review-source">Upwork · 5.0 Rating</span>
+      </div>
+    </div>
+
+    <div class="review-card reveal">
+      <div class="review-stars">★★★★★</div>
+      <p class="review-text">"Nader, you are amazing, and your performance is very professional. Thank you for the great work. Keep it up Nader. I wish you outstanding progress."</p>
+      <div class="review-meta">
+        <span class="review-author">Seha</span>
+        <span class="review-project">40+ Podcast Episodes — Recording, Editing &amp; Mastering</span>
+        <span class="review-source">5.0 Rating</span>
       </div>
     </div>
   </div>
@@ -1336,30 +1357,7 @@ footer {
     <div class="contact-info">
       <h3>Got a project in mind?</h3>
       <p>Whether you need mixing, mastering, recording, or sound design — let's talk about making your sound the best it can be.</p>
-
-      <div class="contact-detail">
-        <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-        <div>
-          <div class="contact-detail-label">Email</div>
-          <div class="contact-detail-value"><a href="mailto:naderibrahim1199@gmail.com">naderibrahim1199@gmail.com</a></div>
-        </div>
-      </div>
-
-      <div class="contact-detail">
-        <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-        <div>
-          <div class="contact-detail-label">Location</div>
-          <div class="contact-detail-value">Kalamazoo, MI</div>
-        </div>
-      </div>
-
-      <div class="contact-detail">
-        <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-        <div>
-          <div class="contact-detail-label">Phone</div>
-          <div class="contact-detail-value"><a href="tel:+12695487759">(269) 548-7759</a></div>
-        </div>
-      </div>
+      <p style="color: var(--text-muted); font-size: 0.85rem; margin-top: 1rem;">Fill out the form and I'll get back to you as soon as possible.</p>
     </div>
 
     <form class="contact-form" action="https://formsubmit.co/naderibrahim1199@gmail.com" method="POST">
