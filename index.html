@@ -854,6 +854,123 @@ section {
   text-transform: uppercase;
 }
 
+/* ─── PRICING ─── */
+.pricing-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  align-items: stretch;
+}
+
+.price-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding: 2rem;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  transition: all 0.3s ease;
+}
+
+.price-card:hover {
+  border-color: var(--accent);
+  background: var(--bg-card-hover);
+}
+
+.price-card.featured {
+  border-color: var(--accent);
+  box-shadow: 0 0 40px var(--accent-dim);
+}
+
+.price-badge {
+  position: absolute;
+  top: -0.7rem;
+  left: 2rem;
+  background: var(--accent);
+  color: var(--bg-primary);
+  font-family: var(--font-mono);
+  font-size: 0.6rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  padding: 0.3rem 0.8rem;
+}
+
+.price-name {
+  font-family: var(--font-display);
+  font-size: 1.8rem;
+  letter-spacing: 2px;
+}
+
+.price-for {
+  font-family: var(--font-mono);
+  font-size: 0.6rem;
+  letter-spacing: 1px;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  margin-top: 0.2rem;
+}
+
+.price-amount {
+  font-family: var(--font-display);
+  font-size: 3.5rem;
+  color: var(--accent);
+  line-height: 1;
+  margin: 1.5rem 0 0.2rem;
+}
+
+.price-amount small {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  color: var(--text-muted);
+  letter-spacing: 1px;
+  margin-left: 0.3rem;
+}
+
+.price-save {
+  font-family: var(--font-mono);
+  font-size: 0.6rem;
+  letter-spacing: 1px;
+  color: var(--accent);
+  text-transform: uppercase;
+  min-height: 1rem;
+}
+
+.price-list {
+  list-style: none;
+  margin: 1.5rem 0 2rem;
+  flex: 1;
+}
+
+.price-list li {
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  padding: 0.5rem 0 0.5rem 1.5rem;
+  border-bottom: 1px solid rgba(42, 42, 47, 0.4);
+  position: relative;
+}
+
+.price-list li::before {
+  content: '—';
+  position: absolute;
+  left: 0;
+  color: var(--accent);
+}
+
+.price-card .btn { text-align: center; }
+
+.pricing-note {
+  margin-top: 2rem;
+  color: var(--text-muted);
+  font-size: 0.85rem;
+  text-align: center;
+}
+
+.pricing-note a { color: var(--accent); text-decoration: none; }
+
+@media (max-width: 900px) {
+  .pricing-grid { grid-template-columns: 1fr; gap: 2rem; }
+}
+
 /* ─── CONTACT ─── */
 .contact-wrapper {
   display: grid;
@@ -1063,6 +1180,7 @@ footer {
     <li><a href="#video" onclick="closeMenu()">Video</a></li>
     <li><a href="#gallery" onclick="closeMenu()">Gallery</a></li>
     <li><a href="#reviews" onclick="closeMenu()">Reviews</a></li>
+    <li><a href="#pricing" onclick="closeMenu()">Pricing</a></li>
     <li><a href="#contact" onclick="closeMenu()">Contact</a></li>
   </ul>
   <button class="hamburger" id="hamburger" onclick="toggleMenu()">
@@ -1404,9 +1522,66 @@ footer {
   </div>
 </section>
 
+<!-- ─── PRICING ─── -->
+<section id="pricing">
+  <p class="section-label reveal">07 — Pricing</p>
+  <h2 class="section-title reveal">PACKAGES</h2>
+  <div class="section-divider reveal"></div>
+
+  <div class="pricing-grid">
+    <div class="price-card reveal">
+      <h3 class="price-name">Mastering</h3>
+      <p class="price-for">Your mix, release-ready</p>
+      <div class="price-amount">$80<small>/ song</small></div>
+      <p class="price-save"></p>
+      <ul class="price-list">
+        <li>Streaming-ready loudness for Spotify, Apple Music &amp; YouTube</li>
+        <li>EQ, compression, stereo imaging &amp; limiting</li>
+        <li>24-bit WAV + MP3 delivery</li>
+        <li>2 revisions included</li>
+        <li>Delivered in 2–3 days</li>
+      </ul>
+      <a href="#contact" class="btn" onclick="choosePackage('Mastering — $80')">Choose Mastering</a>
+    </div>
+
+    <div class="price-card featured reveal">
+      <span class="price-badge">Best Value</span>
+      <h3 class="price-name">Mix &amp; Master</h3>
+      <p class="price-for">From stems to finished song</p>
+      <div class="price-amount">$250<small>/ song</small></div>
+      <p class="price-save">Save $30 vs. booking separately</p>
+      <ul class="price-list">
+        <li>Everything in Mixing + Mastering</li>
+        <li>One engineer from start to finish, so the master suits the mix</li>
+        <li>Vocal tuning &amp; editing included</li>
+        <li>3 mix revisions + 2 master revisions</li>
+        <li>Delivered in 5–7 days</li>
+      </ul>
+      <a href="#contact" class="btn btn-filled" onclick="choosePackage('Mix & Master — $250')">Choose Mix &amp; Master</a>
+    </div>
+
+    <div class="price-card reveal">
+      <h3 class="price-name">Mixing</h3>
+      <p class="price-for">Your stems, balanced &amp; polished</p>
+      <div class="price-amount">$200<small>/ song</small></div>
+      <p class="price-save"></p>
+      <ul class="price-list">
+        <li>Up to 40 tracks/stems</li>
+        <li>Vocal processing, EQ, compression, reverb &amp; delay</li>
+        <li>Instrumental &amp; a cappella versions on request</li>
+        <li>3 revisions included</li>
+        <li>Delivered in 5–7 days</li>
+      </ul>
+      <a href="#contact" class="btn" onclick="choosePackage('Mixing — $200')">Choose Mixing</a>
+    </div>
+  </div>
+
+  <p class="pricing-note reveal">Working on an EP or album? Need podcast editing, dialogue cleanup or sound design? <a href="#contact" onclick="choosePackage('Custom quote')">Ask for a custom quote</a>.</p>
+</section>
+
 <!-- ─── CONTACT ─── -->
 <section id="contact">
-  <p class="section-label reveal">07 — Contact</p>
+  <p class="section-label reveal">08 — Contact</p>
   <h2 class="section-title reveal">LET'S WORK</h2>
   <div class="section-divider reveal"></div>
 
@@ -1420,7 +1595,7 @@ footer {
     <form class="contact-form" action="https://formsubmit.co/naderibrahim1199@gmail.com" method="POST">
       <input type="hidden" name="_subject" value="New inquiry from tornader.info">
       <input type="hidden" name="_captcha" value="false">
-      <input type="hidden" name="_next" value="https://tornader.info">
+      <input type="hidden" name="_next" value="https://tornader.info/thank-you.html">
       <input type="text" name="_honey" style="display:none">
       <div class="form-group">
         <label>Name</label>
@@ -1432,7 +1607,7 @@ footer {
       </div>
       <div class="form-group">
         <label>Project Type</label>
-        <input type="text" name="project-type" placeholder="Mixing, mastering, recording...">
+        <input type="text" name="project-type" id="projectType" placeholder="Mixing, mastering, recording...">
       </div>
       <div class="form-group">
         <label>Message</label>
@@ -1468,6 +1643,13 @@ function toggleMenu() {
 function closeMenu() {
   document.getElementById('navLinks').classList.remove('active');
   document.getElementById('hamburger').classList.remove('active');
+}
+
+// Pricing buttons: pre-fill the Project Type field with the chosen package
+function choosePackage(name) {
+  const field = document.getElementById('projectType');
+  if (field) field.value = name;
+  if (typeof gtag === 'function') gtag('event', 'select_package', { package_name: name });
 }
 
 // Tab switching for Mixes/Masters
