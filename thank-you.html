@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Message Sent — Tornader</title>
+<!-- Keep this page out of Google search results: it should only be reached after the contact form -->
+<meta name="robots" content="noindex, nofollow">
+
+<!-- Google tag (gtag.js) — same tag as the main site -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-FRRTDWVDGL"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-FRRTDWVDGL');
+
+  // Counts one lead every time someone lands here after sending the contact form.
+  // In Google Analytics, mark "generate_lead" as a Key Event, then import it into Google Ads as a conversion.
+  gtag('event', 'generate_lead', { form_name: 'contact', page_location: location.href });
+
+  // OPTIONAL — Google Ads conversion tag. When you create a conversion action in Google Ads,
+  // it gives you an ID like AW-1234567890 and a label like AbCdEfGhIjK. Paste them below and remove the // marks.
+  // gtag('config', 'AW-XXXXXXXXXX');
+  // gtag('event', 'conversion', { send_to: 'AW-XXXXXXXXXX/XXXXXXXXXXX' });
+</script>
+
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Space+Mono:wght@400;700&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg-primary: #0a0a0c;
+  --bg-card: #16161a;
+  --accent: #e85d26;
+  --accent-glow: rgba(232, 93, 38, 0.3);
+  --accent-dim: rgba(232, 93, 38, 0.08);
+  --text-primary: #eae8e4;
+  --text-secondary: #8a8a8f;
+  --text-muted: #55555a;
+  --border: #2a2a2f;
+  --font-display: 'Bebas Neue', sans-serif;
+  --font-mono: 'Space Mono', monospace;
+  --font-body: 'Outfit', sans-serif;
+}
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: var(--font-body);
+  font-weight: 300;
+  line-height: 1.6;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem 1rem;
+  overflow-x: hidden;
+}
+body::after {
+  content: '';
+  position: fixed;
+  width: 600px; height: 600px;
+  border-radius: 50%;
+  background: radial-gradient(circle, var(--accent-glow) 0%, transparent 70%);
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0.4;
+  pointer-events: none;
+  z-index: 0;
+}
+.card {
+  position: relative;
+  z-index: 1;
+  max-width: 560px;
+  width: 100%;
+  text-align: center;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  padding: 3rem 2rem;
+}
+.check {
+  width: 64px; height: 64px;
+  margin: 0 auto 1.5rem;
+  border-radius: 50%;
+  border: 2px solid var(--accent);
+  display: flex; align-items: center; justify-content: center;
+}
+.check svg { width: 28px; height: 28px; stroke: var(--accent); fill: none; stroke-width: 2.5; }
+.label {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  letter-spacing: 4px;
+  color: var(--accent);
+  text-transform: uppercase;
+  margin-bottom: 0.5rem;
+}
+h1 {
+  font-family: var(--font-display);
+  font-size: clamp(2.5rem, 8vw, 3.5rem);
+  letter-spacing: 3px;
+  line-height: 1;
+  margin-bottom: 1.2rem;
+}
+p { color: var(--text-secondary); font-size: 0.95rem; margin-bottom: 1rem; }
+.next {
+  text-align: left;
+  border-top: 1px solid var(--border);
+  margin-top: 1.8rem;
+  padding-top: 1.5rem;
+}
+.next li {
+  list-style: none;
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  padding: 0.4rem 0 0.4rem 1.6rem;
+  position: relative;
+}
+.next li span {
+  position: absolute; left: 0;
+  font-family: var(--font-mono);
+  color: var(--accent);
+  font-size: 0.75rem;
+}
+.actions { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; margin-top: 2rem; }
+.btn {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  padding: 0.9rem 1.6rem;
+  border: 1px solid var(--border);
+  color: var(--text-primary);
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+.btn:hover { border-color: var(--accent); background: var(--accent-dim); color: var(--accent); }
+.btn-filled { background: var(--accent); border-color: var(--accent); color: var(--bg-primary); }
+.btn-filled:hover { background: transparent; color: var(--accent); }
+</style>
+</head>
+<body>
+  <main class="card">
+    <div class="check" aria-hidden="true">
+      <svg viewBox="0 0 24 24"><polyline points="5 12.5 10 17.5 19 7"/></svg>
+    </div>
+    <p class="label">Message Sent</p>
+    <h1>THANK YOU!</h1>
+    <p>Your message has been sent. I'll get back to you within 24 hours, usually sooner.</p>
+
+    <ul class="next">
+      <li><span>01</span>Check your inbox (and spam folder) for my reply.</li>
+      <li><span>02</span>Have your stems or a rough mix ready to share. A Google Drive or Dropbox link works great.</li>
+      <li><span>03</span>We'll agree on the package, references and deadline, then I get to work.</li>
+    </ul>
+
+    <div class="actions">
+      <a href="https://tornader.info/#audio" class="btn btn-filled">Listen to My Work</a>
+      <a href="https://tornader.info/" class="btn">Back to Site</a>
+    </div>
+  </main>
+</body>
+</html>
